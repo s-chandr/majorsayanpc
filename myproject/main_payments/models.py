@@ -7,6 +7,8 @@ class Customer(models.Model):
     customer_id = models.AutoField(primary_key=True)
 
 class Order(models.Model):
+    shop_id = models.ForeignKey(Shop,on_delete=models.CASCADE)
+    customer_id = models.ForeignKey(Customer,on_delete=models.CASCADE)
     order_id = models.AutoField(primary_key=True)
     time_stamp = models.DateTimeField(auto_now_add=True)
 
